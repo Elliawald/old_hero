@@ -375,14 +375,6 @@
             }
         },
         {
-            "Key": "57ff2ca9-274d-4652-8663-83d0ca005829",
-            "Value": {
-                "id": "8be384d6-7470-4f32-afcc-8ea6110231f3",
-                "resourcePath": "sprites\\crops\\crops.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "59672fc6-ad79-439e-ab38-9ebe153bf4df",
             "Value": {
                 "id": "6c77357c-5262-4df7-ae5a-2fc9a1669cc4",
@@ -996,6 +988,14 @@
                 "id": "bda8a9de-9433-4068-a81e-19ef56b62380",
                 "resourcePath": "sprites\\sprite_19\\sprite_19.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d077cd50-311a-490f-b194-5c6cfc0d453b",
+            "Value": {
+                "id": "87bd7a4c-c4ad-437c-a537-732353111b8c",
+                "resourcePath": "objects\\obj_game\\obj_game.yy",
+                "resourceType": "GMObject"
             }
         },
         {

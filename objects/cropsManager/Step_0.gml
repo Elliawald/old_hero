@@ -1,5 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(mouse_check_button_pressed(mb_left)){
-	scr_instance_create_crop(mouse_x,mouse_y, crop.chilli);
+if(keyboard_check_pressed(ord("P"))){planting = !planting;}
+
+if(planting){
+	mx = mouse_x;
+	my = mouse_y;
+	
+	if(mouse_wheel_up()) selectCrop--;
+	if(mouse_wheel_down()) selectCrop++;
+	
+	if (selectCrop > sprite_get_number(spr_crops_picked)-1){selectCrop = sprite_get_number(spr_crops_picked)-1;}
+	else if (selectCrop < 0 ) { selectCrop = 0;}
+	if(mouse_check_button_pressed(mb_left)){
+		scr_instance_create_crop(mx,my, selectCrop);
+	}
 }

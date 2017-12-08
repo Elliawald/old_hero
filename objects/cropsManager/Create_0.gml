@@ -3,13 +3,13 @@
 ds_crops_types	=	0;
 
 enum crop {
-	tomato = 0,
-	potato = 1,
-	carrot = 2,
-	artichoke = 3,
-	chilli = 4,
-	gourd = 5,
-	corn = 6
+	tomato,
+	potato,
+	carrot,
+	artichoke,
+	chilli,
+	gourd,
+	corn
 }
 
 scr_create_crop_type(4,40); //tomato
@@ -19,3 +19,10 @@ scr_create_crop_type(4,45); //artichoke
 scr_create_crop_type(3,30); //chilli
 scr_create_crop_type(2,20); //gourd
 scr_create_crop_type(5,50); //corn
+
+planting = false;
+selectCrop = 0;
+
+mx = 0;
+my = 0;
+cellSize = 32;

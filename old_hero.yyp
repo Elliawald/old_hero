@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "2b07a2c6-7ebc-4316-b6f6-dd749358f78c",
+            "Value": {
+                "id": "26d5e8d2-543d-4644-b91a-f3c3cffd022c",
+                "resourcePath": "tilesets\\tileset2\\tileset2.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "2b4bf272-7220-4f8c-8d98-72e809f00e72",
             "Value": {
                 "id": "84bc320e-8158-4420-913e-99e560ebf46f",
@@ -1055,6 +1063,14 @@
             }
         },
         {
+            "Key": "dbffc43a-5f0b-470b-94bc-a6a27302b5b4",
+            "Value": {
+                "id": "e9ed9aaf-f352-4ea5-8e1f-d6c5241670eb",
+                "resourcePath": "sprites\\sprite50\\sprite50.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "dd9100fc-2640-48e9-aa79-2111ad70539c",
             "Value": {
                 "id": "261d55b0-079a-4977-aa38-9c3c69c3b943",
@@ -1267,14 +1283,6 @@
             "Value": {
                 "id": "c6f7f9ed-5be8-421d-95f1-acd193b9f0b8",
                 "resourcePath": "sprites\\spring_outdoorsTileSheet\\spring_outdoorsTileSheet.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "ff5070d7-82c3-4642-a25f-52d387b88481",
-            "Value": {
-                "id": "65e6b167-311d-4974-997b-d04ce68f9ed9",
-                "resourcePath": "sprites\\sprite_41\\sprite_41.yy",
                 "resourceType": "GMSprite"
             }
         },

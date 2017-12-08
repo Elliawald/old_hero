@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-ds_crops_types	=	0;
-
+ds_crops_types	=	-1;
+ds_crops_instances = -1;
 enum crop {
 	tomato,
 	potato,

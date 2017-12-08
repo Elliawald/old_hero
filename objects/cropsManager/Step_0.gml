@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+#region Planting
 if(keyboard_check_pressed(ord("P"))){planting = !planting;}
 
 if(planting){
@@ -13,5 +14,12 @@ if(planting){
 	else if (selectCrop < 0 ) { selectCrop = 0;}
 	if(mouse_check_button_pressed(mb_left)){
 		scr_instance_create_crop(mx,my, selectCrop);
+	}
+}
+#endregion
+
+if(instance_exists(obj_crop) and keyboard_check_pressed(ord("G"))){
+	with(obj_crop){
+		daysOld++;
 	}
 }

@@ -20,6 +20,19 @@ if(planting){
 
 if(instance_exists(obj_crop) and keyboard_check_pressed(ord("G"))){
 	with(obj_crop){
-		daysOld++;
+		if(growthStage < maxGrowthStage){
+			daysOld++;
+			
+			//firstGrowth
+			var firstGrowth = 0;
+			if(daysOld > 0){
+				firstGrowth = 1;
+			}
+			growthStage = firstGrowth + (daysOld div growthStageDuration);
+		}else{
+			growthStage = maxGrowthStage;
+			fullyGrown = true;
+			alarm[1] = 1;
+		}
 	}
 }

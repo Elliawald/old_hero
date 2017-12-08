@@ -10,7 +10,7 @@ growthStageDuration = 0;
 maxGrowthStage = (sprite_get_width(spr_crops)/frameWidth-1);
 
 fullyGrown = false;
-sparkle = false;
+sparkle = -1;
 
 xx = x-(frameWidth/2)+2;
 yy = y-frameHeight+6;

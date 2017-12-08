@@ -1,0 +1,1 @@
+/// @description regenerate stamina alarm

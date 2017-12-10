@@ -40,6 +40,6 @@ if(cell == 0){
 
 	return inst;
 }else{
-	show_debug_message("there isalready something there");
+	show_debug_message("there is already something there");
 	return false;
 }

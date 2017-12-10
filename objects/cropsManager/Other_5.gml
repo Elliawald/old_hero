@@ -24,7 +24,6 @@ if(room == rm_farm){
 					ds_crops_data[# 2, slot] = inst.cropType;
 					ds_crops_data[# 3, slot] = inst.daysOld;
 					slot++;
-					
 				}
 				yy++;
 			}

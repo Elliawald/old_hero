@@ -12,18 +12,17 @@ if(room == rm_farm){
 			slot++;
 		}
 			with(obj_crop){
-			if(growthStage < maxGrowthStage){
-				//firstGrowth
-				var firstGrowth = 0;
-				if(daysOld > 0){
-					firstGrowth = 1;
+				if(growthStage < maxGrowthStage){
+					var firstGrowth = 0;
+					if(daysOld > 0){
+						firstGrowth = 1;
+					}
+					growthStage = firstGrowth + (daysOld div growthStageDuration);
+				}else{
+					growthStage = maxGrowthStage;
+					fullyGrown = true;
+					alarm[1] = 1;
 				}
-				growthStage = firstGrowth + (daysOld div growthStageDuration);
-			}else{
-				growthStage = maxGrowthStage;
-				fullyGrown = true;
-				alarm[1] = 1;
-			}
 		}
 	}
 }

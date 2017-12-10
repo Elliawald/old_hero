@@ -31,7 +31,6 @@ if(instance_exists(obj_crop) and keyboard_check_pressed(ord("G"))){
 			growthStage = firstGrowth + (daysOld div growthStageDuration);
 		}else{
 			growthStage = maxGrowthStage;
-			fullyGrown = true;
 			alarm[1] = 1;
 		}
 	}

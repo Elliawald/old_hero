@@ -11,18 +11,17 @@ if(room == rm_farm){
 			scr_respawn_crop(ds_crops_data[# 0, slot], ds_crops_data[# 1, slot], ds_crops_data[# 2, slot], ds_crops_data[# 3, slot]);
 			slot++;
 		}
-			with(obj_crop){
-				if(growthStage < maxGrowthStage){
-					var firstGrowth = 0;
-					if(daysOld > 0){
-						firstGrowth = 1;
-					}
-					growthStage = firstGrowth + (daysOld div growthStageDuration);
-				}else{
-					growthStage = maxGrowthStage;
-					fullyGrown = true;
-					alarm[1] = 1;
-				}
+		with(obj_crop){
+			//First growth
+			var firstGrowth = 0;
+			if(daysOld > 0){ firstGrowth = 1; }		
+			growthStage = firstGrowth + (daysOld div growthStageDuration);
+			
+			if (growthStage >= maxGrowthStage){
+				growthStage = maxGrowthStage;
+				fullyGrown = true;
+				alarm[1] = 1;
+			}
 		}
 	}
 }

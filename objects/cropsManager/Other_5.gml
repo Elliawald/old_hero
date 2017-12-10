@@ -32,4 +32,5 @@ if(room == rm_farm){
 		}
 	}
 	ds_grid_destroy(ds_crops_instances);
+	instance_destroy(obj_crop);
 }

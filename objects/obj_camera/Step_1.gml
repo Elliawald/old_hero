@@ -14,3 +14,5 @@ if(window_get_height() != global.gameHeight*global.zoom
 	display_set_gui_size(global.gameWidth, global.gameHeight);
 	display_reset(0, false);
 }
+
+

@@ -13,8 +13,6 @@ if(room == rm_farm){
 		}
 			with(obj_crop){
 			if(growthStage < maxGrowthStage){
-				daysOld++;
-			
 				//firstGrowth
 				var firstGrowth = 0;
 				if(daysOld > 0){

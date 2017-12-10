@@ -12,7 +12,7 @@ yy = gy * cs;
 
 var c = c_red;
 //what is in the cell?
-var cell = ds_crops_instances[# gx, gy];
+var cell = cropsManager.ds_crops_instances[# gx, gy];
 
 if(cell == 0){
 	var lay_id = layer_get_id("T_Soil");

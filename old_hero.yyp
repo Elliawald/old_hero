@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "0bd9e91a-5336-431e-863b-0343cd7c85ba",
+            "Value": {
+                "id": "b41cc3f1-0160-41b2-b711-64799b9be4b3",
+                "resourcePath": "sprites\\spr_allcoins\\spr_allcoins.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0c35453f-47d0-4452-a0c7-4df0ae49dc90",
             "Value": {
                 "id": "5bcd4a23-464e-4e71-8498-6fb943d86b46",
@@ -188,6 +196,14 @@
                 "id": "30c4395b-196c-430e-b740-879492c1aca6",
                 "resourcePath": "sprites\\sprite_player_up\\sprite_player_up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "20651dbd-1cd3-4e44-97b5-1c64304daa42",
+            "Value": {
+                "id": "cfb8b4d8-cd9e-48aa-8e0d-00f849871f57",
+                "resourcePath": "views\\20651dbd-1cd3-4e44-97b5-1c64304daa42.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -300,6 +316,14 @@
                 "id": "68d7f4eb-4b67-4f6e-a02d-cb8324a7ec7d",
                 "resourcePath": "views\\3b0895db-7970-4558-9f17-4b612917f6c5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "413e9e68-8ea8-4ca0-a875-686875d9a4ca",
+            "Value": {
+                "id": "f34b25fa-8c15-4b1c-acdd-c22c623d9349",
+                "resourcePath": "objects\\obj_inventory_2\\obj_inventory_2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -535,6 +559,14 @@
             }
         },
         {
+            "Key": "6affb524-cc29-4b49-9ea2-aec75555e28c",
+            "Value": {
+                "id": "88a5c1a7-0c89-4907-92e2-4db1cbc1096e",
+                "resourcePath": "sprites\\spr_inventory_items\\spr_inventory_items.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6c1339f2-b3ea-44f0-bdb3-15531b4ad965",
             "Value": {
                 "id": "619cfe0f-16f3-4fee-8bf8-33a00750d82e",
@@ -580,6 +612,14 @@
                 "id": "4da02a39-f744-49f9-a5bb-81b8bb1f0985",
                 "resourcePath": "scripts\\scr_itempickup_slot\\scr_itempickup_slot.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "77128d89-50f1-449c-b1f3-f034ed122af6",
+            "Value": {
+                "id": "035cbbbf-4d67-4bfe-984c-fd7812f4a6c5",
+                "resourcePath": "sprites\\spr_inventory_ui\\spr_inventory_ui.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

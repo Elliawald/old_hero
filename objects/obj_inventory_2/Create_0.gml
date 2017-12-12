@@ -6,6 +6,8 @@ scale = 2;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
+show_inventory = false;
+
 cellSize = 32;
 
 spr_inv_UI = spr_inventory_ui;

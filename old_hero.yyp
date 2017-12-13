@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "222482bc-c603-4147-bdf9-d3448b5c9015",
+            "Value": {
+                "id": "76e41b80-0e58-4464-98eb-9d6a046234fc",
+                "resourcePath": "fonts\\fnt_text_24\\fnt_text_24.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "286f7f27-1e33-4440-91ed-027cab8bef61",
             "Value": {
                 "id": "c962defe-196b-4712-900a-acca0e781cb6",
@@ -244,6 +252,14 @@
                 "id": "77165e42-8c8a-4af2-a7ea-90371f757e26",
                 "resourcePath": "scripts\\scr_get_input\\scr_get_input.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2e5bc7d0-03a0-4f9c-b17f-1b6c81ef46db",
+            "Value": {
+                "id": "2f4fb5b2-f7f1-449f-a41c-a62fa4b9d0ad",
+                "resourcePath": "fonts\\fnt_text_12\\fnt_text_12.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -508,6 +524,14 @@
                 "id": "a222772b-72b2-4ef0-9c79-d23df71b7c8c",
                 "resourcePath": "scripts\\scr_enemy_stall_state\\scr_enemy_stall_state.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "633d1e5a-8bbe-422b-88e6-9248bbe90dbe",
+            "Value": {
+                "id": "5e875382-42ce-4ccd-a53d-a0264123f140",
+                "resourcePath": "fonts\\fnt_text_14\\fnt_text_14.yy",
+                "resourceType": "GMFont"
             }
         },
         {

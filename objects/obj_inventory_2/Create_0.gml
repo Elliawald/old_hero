@@ -12,6 +12,12 @@ inv_slots = 17;
 inv_slots_width = 8;
 inv_slots_height = 3;
 
+
+selected_slot = 0;
+pickup_slot = -1;
+m_slotx = 0;
+m_sloty = 0;
+
 x_buffer = 2;
 y_buffer = 4;
 
@@ -21,7 +27,7 @@ spr_inv_UI = spr_inventory_ui;
 spr_inv_items = spr_inventory_items;
 
 spr_inv_items_columns = sprite_get_width(spr_inv_items)/cellSize;
-spr_inv_items_rows = sprite_get_width(spr_inv_items)/cellsize;
+spr_inv_items_rows = sprite_get_width(spr_inv_items)/cellSize;
 
 inv_UI_width = (sprite_get_width(spr_inventory_ui) - cellSize);
 inv_UI_height = sprite_get_height(spr_inventory_ui);
@@ -33,7 +39,7 @@ info_x = inv_UI_x + 9 * scale;
 info_y = inv_UI_y + 9 * scale;
 
 slots_x = info_x;
-slots_y = info_y + (40 * scale);
+slots_y = info_y + (30 * scale);
 
 
 //Player info

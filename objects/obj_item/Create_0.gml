@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-ItemID=0;
+ItemID = 0;
 //items die auf dem boden spawnen
 randomize();
 ItemID = irandom(image_number-1);

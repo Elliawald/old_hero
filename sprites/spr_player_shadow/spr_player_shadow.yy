@@ -7,12 +7,13 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 20,
-    "bbox_left": 0,
-    "bbox_right": 13,
-    "bbox_top": 0,
+    "bbox_left": 1,
+    "bbox_right": 12,
+    "bbox_top": 16,
     "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
+    "edgeFiltering": false,
     "frames": [
         {
             "id": "694f8d6c-82d2-4d46-9e36-017cba7d7ef8",
@@ -164,8 +165,10 @@
         }
     ],
     "origin": 4,
+    "originLocked": false,
     "playbackSpeed": 30,
     "playbackSpeedType": 0,
+    "premultiplyAlpha": false,
     "sepmasks": false,
     "swatchColours": null,
     "swfPrecision": 0,

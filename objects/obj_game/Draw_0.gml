@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+if keyboard_check_pressed(ord("R")) game_restart();
+
 if(!cropsManager.planting){ exit; }
 var xx = 0;
 var yy = 0;
@@ -18,3 +20,4 @@ repeat (r){
 	yy += cs;
 }
 draw_set_alpha(1);
+

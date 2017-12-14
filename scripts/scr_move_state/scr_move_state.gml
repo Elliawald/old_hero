@@ -85,7 +85,7 @@ scr_umfuellen(topf);
 
 if(place_meeting(obj_player.x,obj_player.y,obj_item) && obj_input.use_key_pressed){
 	 var item = instance_nearest(x,y,obj_item);
-	 scr_item_pickup_from_floor(item.ItemID);
+	// scr_item_pickup_from_floor(item.ItemID);
 	instance_destroy(item);
 }
 

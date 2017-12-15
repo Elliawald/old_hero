@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "5e80bbcb-6471-48f1-8d31-3da290779d11",
+            "Value": {
+                "id": "1afa5f13-0dc1-43e6-b658-a1b71f3a0f26",
+                "resourcePath": "sprites\\spr_actionbar\\spr_actionbar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5eba01f6-8e1c-4349-abb0-48f5a4d8c11b",
             "Value": {
                 "id": "18c683c0-cd8e-46ce-abf8-56e269562a05",

@@ -15,13 +15,13 @@ if(drop_move){
 	var r = 32;
 	if(point_in_rectangle(px, py, x-r, y-r ,x+r, y+r)){
 		r = 2;
-		if(!point_in_rectangle(px,py, x-r, y-r,x-r,y+r)){
+		if(! point_in_rectangle(px,py, x-r, y-r,x+r,y+r)){
 			x = lerp(x,px, 0.1);
 			y = lerp(y,py, 0.1);
 		}else{
 			var in = item_num;
 			
-			with(inventory){
+			with(obj_inventory_2){
 				var ds_inv = ds_inventory;
 				var picked_up = false;
 				//check if item exists in inventory
@@ -40,7 +40,7 @@ if(drop_move){
 					yy = 0;
 					repeat(inv_slots){
 						if(ds_inv[# 0, yy] == item.none){
-							ds_inv[# 1, yy] = in;
+							ds_inv[# 0, yy] = in;
 							ds_inv[# 1, yy]++;
 							picked_up = true;
 							break;

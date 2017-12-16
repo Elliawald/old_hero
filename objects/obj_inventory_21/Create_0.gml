@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 depth = -1;
 scale = 2;
 
@@ -77,7 +75,7 @@ ds_player_info[# 1, 3] = "Elliawald";
 //0 Item
 //1 Number
 
-ds_inventory = ds_grid_create(2, inv_slots);
+ds_inventory = ds_grid_create(2, inv_slots + actionbar_slots);
 
 //items 
 
@@ -104,6 +102,12 @@ enum item{
 
 var yy = 0;
 repeat(inv_slots){
+	ds_inventory[# 0, yy] = irandom_range(1, item.height -1);
+	ds_inventory[# 1, yy] = irandom_range(1,10);
+	yy++;
+}
+show_debug_message("YY " + string( yy));
+repeat(actionbar_slots){
 	ds_inventory[# 0, yy] = irandom_range(1, item.height -1);
 	ds_inventory[# 1, yy] = irandom_range(1,10);
 	yy++;

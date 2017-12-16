@@ -1,20 +1,13 @@
-if (keyboard_check_pressed(ord("I"))){
-	show_inventory = !show_inventory;
-}
-
-if(!show_inventory){
-	exit;
-}
-
 #region # mouse slot
 mousex = device_mouse_x_to_gui(0);
 mousey = device_mouse_y_to_gui(0);
-
+show_debug_message("MOUSE_X: " + string(mousex));
+show_debug_message("MOUSE_Y: " + string(mousey));
 var cell_xbuff = (cellSize+x_buffer)*scale;
 var cell_ybuff = (cellSize+y_buffer)*scale;
 
-var i_mousex = mousex - slots_x;
-var i_mousey = mousey - slots_y;
+var i_mousex = mousex - actionbar_slots_x;
+var i_mousey = mousey - actionbar_slots_y;
 
 var nx = i_mousex div cell_xbuff;
 var ny = i_mousey div cell_ybuff;
@@ -32,12 +25,12 @@ if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height){
 }
 
 // set selected slot to mouse pos
-selected_slot = min(inv_slots-1, m_slotx + (m_sloty*inv_slots_width));
+selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
 #endregion
 
 //pickup item
 
-var inv_grid = ds_inventory;
+var inv_grid = ds_actionbar;
 var ss_item = inv_grid[# 0, selected_slot];
 
 if(pickup_slot != -1){

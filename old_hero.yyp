@@ -450,7 +450,7 @@
             "Key": "5ab1ec5d-e705-47d1-a066-23a6a7bc6708",
             "Value": {
                 "id": "8ebd9602-a8ba-4877-b4a6-fec839244891",
-                "resourcePath": "objects\\obj_actionbar\\obj_actionbar.yy",
+                "resourcePath": "objects\\obj_actionbar_old\\obj_actionbar_old.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1060,6 +1060,14 @@
                 "id": "632b786c-0951-4342-9562-131b75a4722a",
                 "resourcePath": "tilesets\\interior\\interior.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "cd71a942-e4e1-48ae-a541-db60a18eafd8",
+            "Value": {
+                "id": "6ef2690a-0644-4418-b309-f85331d6f3e5",
+                "resourcePath": "objects\\obj_actionbar\\obj_actionbar.yy",
+                "resourceType": "GMObject"
             }
         },
         {

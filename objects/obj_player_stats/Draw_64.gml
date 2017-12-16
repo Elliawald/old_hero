@@ -3,7 +3,6 @@ draw_set_color(c_white);
 draw_text_transformed(16, 32, "HP: " + string(hp) + "/" + string(maxhp),0.5,0.5,0);
 draw_text_transformed(16, 48, "STAMINA: " + string(stamina) + "/" + string(maxstamina),0.5,0.5,0);
 draw_text_transformed(16, 54, "LEVEL: " + string(level),0.5,0.5,0);
-draw_text_transformed(16, 70, "FPS: " + string(global.active_slot),0.5,0.5,0);
 
 var fass1 = instance_find(obj_fass,0);
 var fass2 = instance_find(obj_fass,1);

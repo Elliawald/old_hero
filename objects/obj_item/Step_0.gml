@@ -22,7 +22,7 @@ if(drop_move){
 			var in = item_num;
 			
 			with(obj_inventory_2){
-				var ds_inv = ds_inventory;
+				var ds_inv = global.ds_inventory;
 				var picked_up = false;
 				//check if item exists in inventory
 				var yy = 0;

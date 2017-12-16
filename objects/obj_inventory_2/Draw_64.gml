@@ -7,7 +7,7 @@ var ii,ix,iy,xx,yy, iitem, inv_grid, sx, sy;
 ii = 12;
 ix = 0;
 iy = 0;
-inv_grid = ds_inventory;
+inv_grid = global.ds_inventory;
 var c = c_black;
 // inventory 
 draw_sprite_part_ext(spr_inv_UI,0, cellSize,0,inv_UI_width,inv_UI_height,inv_UI_x, inv_UI_y,scale,scale,c_white,1 );
@@ -42,7 +42,7 @@ repeat(inv_slots){
 	draw_sprite_part_ext(spr_inv_UI,0,0,0,cellSize,cellSize,xx,yy,scale,scale,c_white,1);
 	
 	switch(ii){
-		case selected_slot:
+		case global.selected_slot:
 		if(iitem > 0){
 			draw_sprite_part_ext(spr_inv_items,0,sx,sy,cellSize,cellSize,xx,yy,scale,scale,c_white,1);
 		}

@@ -28,23 +28,25 @@ if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height){
 		m_slotx = nx;
 		m_sloty = ny;
 	}
-	
+	global.selected_slot = min(inv_slots-1, m_slotx + (m_sloty*inv_slots_width));
+}else{
+	global.selected_slot = -1;
 }
 
 // set selected slot to mouse pos
-selected_slot = min(inv_slots-1, m_slotx + (m_sloty*inv_slots_width));
+
 #endregion
 
 //pickup item
 
-var inv_grid = ds_inventory;
-var ss_item = inv_grid[# 0, selected_slot];
+var inv_grid = global.ds_inventory;
+var ss_item = inv_grid[# 0, global.selected_slot];
 
-if(pickup_slot != -1){
+if(pickup_slot != -1 ){
 	if(mouse_check_button_pressed(mb_left)){
 		if(ss_item == item.none){
-			inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot];
-			inv_grid[# 1, selected_slot] = inv_grid[# 1, pickup_slot];
+			inv_grid[# 0, global.selected_slot] = inv_grid[# 0, pickup_slot];
+			inv_grid[# 1, global.selected_slot] = inv_grid[# 1, pickup_slot];
 			
 			inv_grid[# 0, pickup_slot] = item.none;
 			inv_grid[# 1, pickup_slot] = 0;
@@ -52,8 +54,8 @@ if(pickup_slot != -1){
 			pickup_slot = -1;
 			
 		}else if(ss_item == inv_grid[# 0, pickup_slot]){
-			if(selected_slot != pickup_slot){
-				inv_grid[# 1, selected_slot] += inv_grid[# 1, pickup_slot];
+			if(global.selected_slot != pickup_slot){
+				inv_grid[# 1, global.selected_slot] += inv_grid[# 1, pickup_slot];
 				
 				inv_grid[# 0, pickup_slot] = item.none;
 				inv_grid[# 1, pickup_slot] = 0;
@@ -62,9 +64,9 @@ if(pickup_slot != -1){
 				pickup_slot = -1;
 			}
 		}else{
-			var ss_item_num = inv_grid[# 1, selected_slot];
-			inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot];
-			inv_grid[# 1, selected_slot] = inv_grid[# 1, pickup_slot];
+			var ss_item_num = inv_grid[# 1, global.selected_slot];
+			inv_grid[# 0, global.selected_slot] = inv_grid[# 0, pickup_slot];
+			inv_grid[# 1, global.selected_slot] = inv_grid[# 1, pickup_slot];
 			
 			inv_grid[# 0, pickup_slot] = ss_item;
 			inv_grid[# 1, pickup_slot] = ss_item_num;
@@ -75,11 +77,11 @@ if(pickup_slot != -1){
 }else if(ss_item != item.none){
 	//drop item into room
 	if(mouse_check_button_pressed(mb_middle)){
-		inv_grid[# 1, selected_slot] -= 1;
+		inv_grid[# 1, global.selected_slot] -= 1;
 		
 		//destroy item in inventory if it was the last one
-		if(inv_grid[# 1, selected_slot] == 0){
-			inv_grid[# 0, selected_slot] = item.none;
+		if(inv_grid[# 1, global.selected_slot] == 0){
+			inv_grid[# 0, global.selected_slot] = item.none;
 		}
 		//create item
 		var inst = instance_create_layer(obj_player.x,obj_player.y,"Instances", obj_item);
@@ -93,7 +95,8 @@ if(pickup_slot != -1){
 	
 	
 	//drop pickupt item into new slot
-	if(mouse_check_button_pressed(mb_left)){
-		pickup_slot = selected_slot;
+	if(mouse_check_button_pressed(mb_left) ){
+		pickup_slot = global.selected_slot;
+		global.mouseItem = global.selected_slot;
 	}
 }

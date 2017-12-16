@@ -7,7 +7,7 @@ gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
 show_inventory = false;
-
+actionbar_active = true;
 inv_slots =12;
 actionbar_slots = 8;
 inv_slots_width = 8;
@@ -77,7 +77,7 @@ ds_player_info[# 1, 3] = "Elliawald";
 //0 Item
 //1 Number
 
-ds_inventory = ds_grid_create(2, inv_slots);
+global.ds_inventory = ds_grid_create(2, inv_slots);
 
 //items 
 
@@ -104,7 +104,7 @@ enum item{
 
 var yy = 0;
 repeat(inv_slots){
-	ds_inventory[# 0, yy] = irandom_range(1, item.height -1);
-	ds_inventory[# 1, yy] = irandom_range(1,10);
+	global.ds_inventory[# 0, yy] = irandom_range(1, item.height -1);
+	global.ds_inventory[# 1, yy] = irandom_range(1,10);
 	yy++;
 }

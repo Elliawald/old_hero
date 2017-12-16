@@ -1,8 +1,7 @@
 #region # mouse slot
 mousex = device_mouse_x_to_gui(0);
 mousey = device_mouse_y_to_gui(0);
-show_debug_message("MOUSE_X: " + string(mousex));
-show_debug_message("MOUSE_Y: " + string(mousey));
+
 var cell_xbuff = (cellSize+x_buffer)*scale;
 var cell_ybuff = (cellSize+y_buffer)*scale;
 
@@ -13,6 +12,7 @@ var nx = i_mousex div cell_xbuff;
 var ny = i_mousey div cell_ybuff;
 
 if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height){
+
 	var sx = i_mousex - (nx*cell_xbuff);
 	var sy = i_mousey - (ny*cell_ybuff);
 	
@@ -21,11 +21,16 @@ if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height){
 		m_slotx = nx;
 		m_sloty = ny;
 	}
-	
+	selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
+}else{
+	selected_slot = -1;
 }
 
 // set selected slot to mouse pos
-selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
+
+
+
+
 #endregion
 
 //pickup item
@@ -33,7 +38,7 @@ selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
 var inv_grid = ds_actionbar;
 var ss_item = inv_grid[# 0, selected_slot];
 
-if(pickup_slot != -1){
+if(pickup_slot != -1 ){
 	if(mouse_check_button_pressed(mb_left)){
 		if(ss_item == item.none){
 			inv_grid[# 0, selected_slot] = inv_grid[# 0, pickup_slot];
@@ -63,6 +68,31 @@ if(pickup_slot != -1){
 			inv_grid[# 1, pickup_slot] = ss_item_num;
 			
 			pickup_slot = -1;	
+		}
+	}
+}else if(global.mouseItem != -1){
+	if(mouse_check_button_pressed(mb_left)){
+		if(ss_item == item.none){
+			inv_grid[# 0, selected_slot] = global.ds_inventory[# 0, global.mouseItem];
+			inv_grid[# 1, selected_slot] = global.ds_inventory[# 1, global.mouseItem];
+			
+			inv_grid[# 0, global.mouseItem] = item.none;
+			inv_grid[# 1, global.mouseItem] = 0;
+			
+			pickup_slot = -1;
+			global.mouseItem = -1;
+		}else if(ss_item == global.ds_inventory[# 0, global.mouseItem]){
+			if(selected_slot != global.mouseItem){
+				inv_grid[# 1, selected_slot] += global.ds_inventory[# 1, global.mouseItem];
+				
+				global.ds_inventory[# 0, global.mouseItem] = item.none;
+				global.ds_inventory[# 1, global.mouseItem] = 0;
+				global.mouseItem = -1;
+				pickup_slot = -1;
+			}else{
+				global.mouseItem = -1;
+				pickup_slot = -1;
+			}
 		}
 	}
 }else if(ss_item != item.none){

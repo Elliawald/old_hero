@@ -66,12 +66,6 @@ if(obj_input.pflug_key && global.pflug_state == 0){
 }
 
 
-if(obj_input.inventory_key && showInv == false){
-	showInv = true;
-}
-if(obj_input.inventory_key && showInv == true){
-	showInv = false;	
-}
 
 
 

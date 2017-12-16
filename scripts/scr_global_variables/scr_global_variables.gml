@@ -1,4 +1,6 @@
 //scr_global_variables
+pickup_slot = -1;
+global.mouseItem = -1;
 global.right = 0;
 global.up = 1;
 global.left = 2;

@@ -56,12 +56,12 @@ actionbar_slots_y = actionbar_info_y + (0.5 );
 
 
 
-ds_actionbar = ds_grid_create(2, actionbar_slots);
+
 
 
 var yy = 0;
 repeat(actionbar_slots){
-	ds_actionbar[# 0, yy] = irandom_range(1, item.height -1);
-	ds_actionbar[# 1, yy] = irandom_range(1,10);
+	global.ds_actionbar[# 0, yy] = irandom_range(1, item.height -1);
+	global.ds_actionbar[# 1, yy] = irandom_range(1,10);
 	yy++;
 }

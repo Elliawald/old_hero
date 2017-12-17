@@ -7,7 +7,6 @@ var ii,ix,iy,xx,yy, iitem, inv_grid, sx, sy;
 ii = 12;
 ix = 0;
 iy = 0;
-inv_grid = global.ds_inventory;
 var c = c_black;
 // inventory 
 draw_sprite_part_ext(spr_inv_UI,0, cellSize,0,inv_UI_width,inv_UI_height,inv_UI_x, inv_UI_y,scale,scale,c_white,1 );
@@ -34,7 +33,7 @@ repeat(inv_slots){
 	xx = slots_x + ((cellSize+x_buffer)*ix*scale);
 	yy = slots_y + ((cellSize+y_buffer)*iy*scale);
 	//item
-	iitem = inv_grid[# 0, ii];
+	iitem = global.ds_inventory[# 0, ii];
 	sx = (iitem mod spr_inv_items_columns)*cellSize;
 	sy = (iitem div spr_inv_items_columns)*cellSize;
 	
@@ -42,7 +41,7 @@ repeat(inv_slots){
 	draw_sprite_part_ext(spr_inv_UI,0,0,0,cellSize,cellSize,xx,yy,scale,scale,c_white,1);
 	
 	switch(ii){
-		case global.selected_slot:
+		case selected_slot:
 		if(iitem > 0){
 			draw_sprite_part_ext(spr_inv_items,0,sx,sy,cellSize,cellSize,xx,yy,scale,scale,c_white,1);
 		}
@@ -67,7 +66,7 @@ repeat(inv_slots){
 	
 	//draw number
 	if(iitem > 0){
-		var number = inv_grid[# 1, ii];
+		var number = global.ds_inventory[# 1, ii];
 		draw_text_color(xx,yy,string(number),c,c,c,c,1);
 	}
 	
@@ -83,12 +82,12 @@ repeat(inv_slots){
 
 if(pickup_slot != -1){
 	//item
-	iitem = inv_grid[# 0, pickup_slot];
+	iitem = global.ds_inventory[# 0, pickup_slot];
 	sx = (iitem mod spr_inv_items_columns)*cellSize;
 	sy = (iitem div spr_inv_items_columns)*cellSize;
 	draw_sprite_part_ext(spr_inv_items,0,sx,sy,cellSize,cellSize,mousex,mousey,scale,scale,c_white,1);
 
-	var inum = inv_grid[# 1, pickup_slot];
+	var inum = global.ds_inventory[# 1, pickup_slot];
 	if(inum != 0)	
 		draw_text_color(mousex+(cellSize*scale+0.5),mousey, string(inum), c,c,c,c,1);
 }

@@ -77,7 +77,7 @@ ds_player_info[# 1, 3] = "Elliawald";
 //0 Item
 //1 Number
 
-global.ds_inventory = ds_grid_create(2, inv_slots);
+
 
 //items 
 

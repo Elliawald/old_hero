@@ -13,6 +13,14 @@ global.attackblock = 0;
 global.topf_inhalt = array_create(20, 0);
 global.list = ds_list_create();
 global.rezept_bier = ds_list_create();
+global.ds_temp = ds_grid_create(2, 1);
+
+global.ds_inventory = ds_grid_create(2, 12);
+global.ds_actionbar = ds_grid_create(2, 8);
+
+global.ds_temp[# 0,0] = item.none;
+global.ds_temp[# 0,1] = 0;
+
 var bier = array_create(20, 0);
 bier[0] = 3;
 bier[1] = 2;

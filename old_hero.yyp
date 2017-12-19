@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "4f179901-284b-4dd9-85c6-acc09658064f",
+            "Value": {
+                "id": "5daa5c8c-d02e-4f09-ab0b-f69244092d91",
+                "resourcePath": "objects\\obj_draw\\obj_draw.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "4f73ba22-e828-4024-a0af-423771eb32ef",
             "Value": {
                 "id": "021abaff-9ff6-47a5-837d-1998a5d509fe",

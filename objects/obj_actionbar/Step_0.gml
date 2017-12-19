@@ -40,6 +40,7 @@ var ss_item = global.ds_actionbar[# 0, selected_slot];
 if(pickup_slot != -1){
 	if(mouse_check_button_pressed(mb_left)){
 		if(ss_item == item.none){
+			show_debug_message("11");
 			global.ds_actionbar[# 0, selected_slot] = global.ds_actionbar[# 0, pickup_slot];
 			global.ds_actionbar[# 1, selected_slot] = global.ds_actionbar[# 1, pickup_slot];
 			
@@ -50,6 +51,7 @@ if(pickup_slot != -1){
 			
 		}else if(ss_item == global.ds_actionbar[# 0, pickup_slot]){
 			if(selected_slot != pickup_slot){
+				show_debug_message("22");
 				global.ds_actionbar[# 1, selected_slot] += global.ds_actionbar[# 1, pickup_slot];
 				
 				global.ds_actionbar[# 0, pickup_slot] = item.none;
@@ -59,6 +61,7 @@ if(pickup_slot != -1){
 				pickup_slot = -1;
 			}
 		}else{
+			show_debug_message("33");
 			var ss_item_num = global.ds_actionbar[# 1, selected_slot];
 			global.ds_actionbar[# 0, selected_slot] = global.ds_actionbar[# 0, pickup_slot];
 			global.ds_actionbar[# 1, selected_slot] = global.ds_actionbar[# 1, pickup_slot];
@@ -70,6 +73,7 @@ if(pickup_slot != -1){
 		}
 	}
 }else if(ss_item != item.none){
+	show_debug_message("drop");
 	//drop item into room
 	if(mouse_check_button_pressed(mb_middle)){
 		global.ds_actionbar[# 1, selected_slot] -= 1;
@@ -101,6 +105,7 @@ if(pickup_slot != -1){
 }else if(global.ds_temp[# 0,0] != item.none && (nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height)){
 	if(mouse_check_button_pressed(mb_left)){
 		if(ss_item == item.none){
+			show_debug_message("1");
 			global.ds_actionbar[# 0, selected_slot] = global.ds_temp[# 0,0];
 			global.ds_actionbar[# 1, selected_slot] = global.ds_temp[# 1,0];
 			global.ds_inventory[# 0, global.mouseItem] = item.none;
@@ -111,6 +116,17 @@ if(pickup_slot != -1){
 			global.ds_temp[# 1,0] = 0;
 			global.ds_temp[# 0,1] = "none";
 			pickup_slot = -1;
+		}else if(ss_item == global.ds_temp[# 1,0]){
+			show_debug_message("2");
+				global.ds_actionbar[# 1, selected_slot] += global.ds_temp[# 1,0];
+				
+				global.ds_inventory[# 0, global.mouseItem] = item.none;
+				global.ds_inventory[# 1, global.mouseItem] = 0;
+				global.ds_temp[# 0,0] = item.none;
+				global.ds_temp[# 1,0] = 0;
+				global.ds_temp[# 0,1] = "none";
+				pickup_slot = -1;
+
 		}
 		
 	}

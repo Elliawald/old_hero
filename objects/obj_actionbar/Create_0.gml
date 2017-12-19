@@ -7,7 +7,6 @@ gui_height = display_get_gui_height();
 show_inventory = false;
 
 actionbar_slots =8;
-actionbar_slots = 8;
 inv_slots_width = 8;
 inv_slots_height = 1;
 

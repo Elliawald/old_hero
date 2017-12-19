@@ -99,6 +99,7 @@ if(pickup_slot != -1 ){
 		pickup_slot = selected_slot;
 		global.ds_temp[# 0,0] = global.ds_inventory[# 0, selected_slot];
 		global.ds_temp[# 1,0] = global.ds_inventory[# 1, selected_slot];
+		global.ds_temp[# 0,1] = "inventory";
 		global.mouseItem = selected_slot;
 
 	}
@@ -113,6 +114,7 @@ if(pickup_slot != -1 ){
 					
 			global.ds_temp[# 0,0] = item.none;
 			global.ds_temp[# 1,0] = 0;
+			global.ds_temp[# 0,1] = "none";
 			pickup_slot = -1;
 		}
 		

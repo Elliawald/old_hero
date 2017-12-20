@@ -20,5 +20,4 @@ switch(obj_player.face){
 	break;
 }
 
-
 draw_self();

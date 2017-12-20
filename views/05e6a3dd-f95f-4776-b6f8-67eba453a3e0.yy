@@ -21,7 +21,8 @@
         "193caa73-cce1-4edf-9cc4-d1199d58743f",
         "0a30223a-a231-4cc1-bce8-e46b0ddfd9a4",
         "6c1339f2-b3ea-44f0-bdb3-15531b4ad965",
-        "773250a0-20f8-4af6-9b8d-8715301ccb46"
+        "773250a0-20f8-4af6-9b8d-8715301ccb46",
+        "93289a6c-476c-4d37-bae2-dc26c4321951"
     ],
     "filterType": "GMSprite",
     "folderName": "umgebung",

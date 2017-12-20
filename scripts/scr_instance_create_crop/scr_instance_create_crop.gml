@@ -15,7 +15,7 @@ if(cell == 0){
 	var yy = gy*cs;
 
 	//check for soil
-	var lay_id = layer_get_id("T_Soil");
+	var lay_id = layer_get_id(global.ground_layer);
 	var map_id = layer_tilemap_get_id(lay_id);
 	var data = tilemap_get_at_pixel(map_id, argument0, argument1);
 

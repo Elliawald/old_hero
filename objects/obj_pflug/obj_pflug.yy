@@ -5,16 +5,6 @@
     "name": "obj_pflug",
     "eventList": [
         {
-            "id": "a17eded7-7d5f-4bd0-9ed7-6a9cf51cf539",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "f59588d5-88d3-4c45-b615-7734c291335b",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "4c84f216-36a4-4779-a4bb-801b5e6fb06d"
-        },
-        {
             "id": "a558bc7a-6af6-4168-9e87-a6df7fc83bf1",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -35,13 +25,13 @@
             "m_owner": "4c84f216-36a4-4779-a4bb-801b5e6fb06d"
         },
         {
-            "id": "f9c90198-f9cc-4a26-aad7-16deaee62494",
+            "id": "37ae8e23-6020-4d75-b84a-616191efdb93",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 2,
+            "eventtype": 3,
             "m_owner": "4c84f216-36a4-4779-a4bb-801b5e6fb06d"
         }
     ],

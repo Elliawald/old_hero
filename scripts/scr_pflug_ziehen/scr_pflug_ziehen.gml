@@ -56,12 +56,7 @@ switch(face){
 	break;
 }
 
-if((temp != oldtemp) && temp != 0){
-	global.plow_active = 0;
-	image_angle = 45;
-	alarm[0] = room_speed;
-	oldtemp = temp;
-}
+
 if(alarm[0] <= 1){
 	global.plow_active = 1;
 }

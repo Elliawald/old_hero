@@ -39,7 +39,6 @@ var ss_item = global.ds_actionbar[# 0, selected_slot];
 if(global.ds_temp[# 0,1] == "inventory" && (nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height)){
 	if(mouse_check_button_pressed(mb_left)){
 		if(ss_item == item.none){
-			show_debug_message("1");
 			global.ds_actionbar[# 0, selected_slot] = global.ds_temp[# 0,0];
 			global.ds_actionbar[# 1, selected_slot] = global.ds_temp[# 1,0];
 			global.ds_inventory[# 0, global.mouseItem] = item.none;
@@ -50,9 +49,12 @@ if(global.ds_temp[# 0,1] == "inventory" && (nx >= 0 and nx < inv_slots_width and
 			global.ds_temp[# 1,0] = 0;
 			global.ds_temp[# 0,1] = "none";
 			pickup_slot = -1;
+			global.mouseItem = -1;
+			obj_inventory_2.pickup_slot = -1;
 			exit;
 		}else if(ss_item == global.ds_temp[# 0,0]){
-			show_debug_message("2");
+			if(selected_slot != global.mouseItem){
+
 				global.ds_actionbar[# 1, selected_slot] += global.ds_temp[# 1,0];
 				
 				global.ds_inventory[# 0, global.mouseItem] = item.none;
@@ -61,7 +63,29 @@ if(global.ds_temp[# 0,1] == "inventory" && (nx >= 0 and nx < inv_slots_width and
 				global.ds_temp[# 1,0] = 0;
 				global.ds_temp[# 0,1] = "none";
 				pickup_slot = -1;
-				exit;
+				global.mouseItem = -1;
+				obj_inventory_2.pickup_slot = -1;
+			}else{
+				global.mouseItem = -1;
+				pickup_slot = -1;
+				obj_inventory_2.pickup_slot = -1;
+			}	
+			exit;
+		}else{
+			var ss_item_num = global.ds_actionbar[# 1, selected_slot];
+			global.ds_actionbar[# 0, selected_slot] = global.ds_inventory[# 0, global.mouseItem];
+			global.ds_actionbar[# 1, selected_slot] = global.ds_inventory[# 1, global.mouseItem];
+			
+			global.ds_inventory[# 0, global.mouseItem] = ss_item;
+			global.ds_inventory[# 1, global.mouseItem] = ss_item_num;
+			
+			global.ds_temp[# 0,0] = item.none;
+			global.ds_temp[# 1,0] = 0;
+			global.ds_temp[# 0,1] = "none";
+			pickup_slot = -1;
+			obj_inventory_2.pickup_slot = -1;
+			global.mouseItem = -1;
+			exit;
 		}
 	}
 }
@@ -80,7 +104,6 @@ if(pickup_slot != -1){
 			
 		}else if(ss_item == global.ds_actionbar[# 0, pickup_slot]){
 			if(selected_slot != pickup_slot){
-				show_debug_message("22");
 				global.ds_actionbar[# 1, selected_slot] += global.ds_actionbar[# 1, pickup_slot];
 				
 				global.ds_actionbar[# 0, pickup_slot] = item.none;
@@ -90,7 +113,6 @@ if(pickup_slot != -1){
 				pickup_slot = -1;
 			}
 		}else{
-			show_debug_message("33");
 			var ss_item_num = global.ds_actionbar[# 1, selected_slot];
 			global.ds_actionbar[# 0, selected_slot] = global.ds_actionbar[# 0, pickup_slot];
 			global.ds_actionbar[# 1, selected_slot] = global.ds_actionbar[# 1, pickup_slot];
@@ -102,7 +124,6 @@ if(pickup_slot != -1){
 		}
 	}
 }else if(ss_item != item.none){
-	show_debug_message("drop");
 	//drop item into room
 	if(mouse_check_button_pressed(mb_middle)){
 		global.ds_actionbar[# 1, selected_slot] -= 1;

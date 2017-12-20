@@ -53,9 +53,12 @@ if(global.ds_temp[# 0,1] == "actionbar" && (nx >= 0 and nx < inv_slots_width and
 			global.ds_temp[# 1,0] = 0;
 			global.ds_temp[# 0,1] = "none";
 			pickup_slot = -1;
+			global.mouseItem = -1;
+			obj_actionbar.pickup_slot = -1;
 			exit;
 		}else if(ss_item == global.ds_temp[# 0,0]){
-			show_debug_message("2");
+			if(selected_slot != global.mouseItem){
+
 				global.ds_inventory[# 1, selected_slot] += global.ds_temp[# 1,0];
 				
 				global.ds_actionbar[# 0, global.mouseItem] = item.none;
@@ -64,7 +67,30 @@ if(global.ds_temp[# 0,1] == "actionbar" && (nx >= 0 and nx < inv_slots_width and
 				global.ds_temp[# 1,0] = 0;
 				global.ds_temp[# 0,1] = "none";
 				pickup_slot = -1;
-				exit;
+				global.mouseItem = -1;
+				obj_actionbar.pickup_slot = -1;
+	
+			}else{
+				global.mouseItem = -1;
+				pickup_slot = -1;
+				obj_actionbar.pickup_slot = -1;
+			}	
+			exit;
+		}else{
+			var ss_item_num = global.ds_inventory[# 1, selected_slot];
+			global.ds_inventory[# 0, selected_slot] = global.ds_actionbar[# 0, global.mouseItem];
+			global.ds_inventory[# 1, selected_slot] = global.ds_actionbar[# 1, global.mouseItem];
+			
+			global.ds_actionbar[# 0, global.mouseItem] = ss_item;
+			global.ds_actionbar[# 1, global.mouseItem] = ss_item_num;
+			
+			global.ds_temp[# 0,0] = item.none;
+			global.ds_temp[# 1,0] = 0;
+			global.ds_temp[# 0,1] = "none";
+			pickup_slot = -1;
+			obj_actionbar.pickup_slot = -1;
+			global.mouseItem = -1;
+			exit;
 		}
 	}
 }

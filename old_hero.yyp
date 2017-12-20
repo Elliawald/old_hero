@@ -967,14 +967,6 @@
             }
         },
         {
-            "Key": "abf2a1f4-0e98-458d-950a-794561ae0208",
-            "Value": {
-                "id": "96b47727-132a-4e19-9c4e-46fab15e53db",
-                "resourcePath": "objects\\obj_tilesetter\\obj_tilesetter.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "b030d864-1d68-4024-bba1-8f8488d12c98",
             "Value": {
                 "id": "49fe5eda-b826-4f3d-b809-93539d3790e6",

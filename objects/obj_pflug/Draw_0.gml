@@ -20,4 +20,9 @@ switch(obj_player.face){
 	break;
 }
 
+	var tile_id = layer_tilemap_get_id("T_Soil");
+	tilemap_set_at_pixel(tile_id,1,132,132);
+	draw_tile(tile_id, 1, 0, 132, 132);
+
+
 draw_self();

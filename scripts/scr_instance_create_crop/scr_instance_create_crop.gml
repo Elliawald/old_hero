@@ -8,17 +8,18 @@ var gx = argument0 div cs;
 var gy = argument1 div cs;
 var i_grid = cropsManager.ds_crops_instances;
 var cell = i_grid[# gx, gy];
-
+var data = 0;
 if(cell == 0){
 
 	var xx = gx*cs;
 	var yy = gy*cs;
 
 	//check for soil
-	var lay_id = layer_get_id(global.ground_layer);
+	if(layer_exists("T_Soil")){
+	var lay_id = layer_get_id("T_Soil");
 	var map_id = layer_tilemap_get_id(lay_id);
-	var data = tilemap_get_at_pixel(map_id, argument0, argument1);
-
+	data = tilemap_get_at_pixel(map_id, argument0, argument1);
+	}
 	if(data == 0){
 		show_debug_message("there is no soil here");
 		return false;

@@ -59,8 +59,7 @@ if(obj_input.pflug_key && global.pflug_state == 0){
 		case global.down:
 			instance_create_layer(x,y-sprite_height,"Instances",obj_pflug);
 		break;	
-	}	
-	//instance_create_layer(x+16,y,"pflug_layer",obj_pflug);	
+	}		
 	
 	state = scr_pflug_ziehen;
 }

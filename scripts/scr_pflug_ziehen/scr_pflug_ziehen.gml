@@ -75,7 +75,20 @@ if(alarm[0] <= 1){
 
 	obj_pflug.phy_position_x += hspd;
 	obj_pflug.phy_position_y += vspd;
+	if(obj_input.pflug_down){
+		with(obj_pflug){
+			var gx = x div cs;
+			var gy = y div cs;
+			var xx = gx*cs;
+			var yy = gy*cs;
+	
+			var tile_id = layer_tilemap_get_id("T_Soil");
+			tilemap_set_at_pixel(tile_id,1,xx,yy);
+		}
+	}
+	
 
+	
 	if(obj_input.pflug_key && global.pflug_state == 1){
 		image_index = 0;
 		global.pflug_state = 0;

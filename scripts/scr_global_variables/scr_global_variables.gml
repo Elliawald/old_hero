@@ -15,8 +15,9 @@ global.list = ds_list_create();
 global.rezept_bier = ds_list_create();
 global.ds_temp = ds_grid_create(2, 2);
 
-global.ds_inventory = ds_grid_create(2, 12);
-global.ds_actionbar = ds_grid_create(2, 8);
+global.ds_inventory = ds_grid_create(3, 12);
+global.ds_actionbar = ds_grid_create(3, 8);
+
 
 global.ds_temp[# 0,0] = item.none;
 global.ds_temp[# 1,0] = 0;

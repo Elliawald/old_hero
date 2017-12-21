@@ -24,7 +24,6 @@ if(mouse_wheel_up() || mouse_wheel_down() )
 		m_slotx = 0;
 	}
 	selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
-
 }
 if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height and selected_slot != -1){
 
@@ -38,6 +37,30 @@ if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height and se
 	}
 	selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
 }else{
+	if(mouse_check_button_pressed(mb_left)){
+		var px = obj_player.x;
+		var py = obj_player.y;
+		
+		var r = 32;
+		var close_enough = false;
+		if(point_in_rectangle(px, py, mouse_x-r, mouse_y-r ,mouse_x+r, mouse_y+r)){
+			close_enough = true;
+		}
+		
+		if(global.ds_actionbar[# 0, selected_slot] < item.wood && global.ds_actionbar[# 0, selected_slot] > item.none && close_enough){
+			show_debug_message(global.ds_actionbar[# 0, selected_slot]);
+			if(scr_instance_create_crop(mouse_x,mouse_y, global.ds_actionbar[# 0, selected_slot]-1)){
+				global.ds_actionbar[# 1, selected_slot] -= 1;
+				//destroy item in inventory if it was the last one
+				if(global.ds_actionbar[# 1, selected_slot] == 0){
+					global.ds_actionbar[# 0, selected_slot] = item.none;
+				}
+			}
+		}else{
+			show_debug_message("not plantable");
+		}
+
+	}
 	exit;
 }
 

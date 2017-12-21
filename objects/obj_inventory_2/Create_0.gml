@@ -106,5 +106,11 @@ var yy = 0;
 repeat(inv_slots){
 	global.ds_inventory[# 0, yy] = irandom_range(1, item.height -1);
 	global.ds_inventory[# 1, yy] = irandom_range(1,10);
+	if(global.ds_inventory[# 2, yy] >= item.stone){
+		global.ds_inventory[# 2, yy] = "not_plantable";
+	}else{
+		global.ds_inventory[# 2, yy] = "plantable";
+	}
+	
 	yy++;
 }

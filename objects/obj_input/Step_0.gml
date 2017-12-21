@@ -3,7 +3,7 @@
 scr_get_input();
 
 //pause the game
-if(pause_key){
+/*if(pause_key){
 	showInv = true;
 	if(room != rm_pause){
 		if(instance_exists(obj_player)){

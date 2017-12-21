@@ -4,6 +4,8 @@ scale = 2;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
 
+selectItem = -1;
+
 show_inventory = false;
 
 actionbar_slots =8;

@@ -100,13 +100,16 @@ else if(argument0 == obj_actionbar){
 	with(obj_actionbar){
 			//actionbar
 		draw_sprite_part_ext(spr_actionbar_UI,0, cellSize,0,inv_UI_width,inv_UI_height,inv_UI_x, inv_actionbar_y,scale,scale,c_white,1 );
-
+		
+		
+		
 		//inventory
 		var ii,ix,iy,xx,yy, iitem, inv_grid, sx, sy;
 		ii = 0;
 		ix = 0;
 		iy = 0;
 		var c = c_black;
+		
 
 		repeat(actionbar_slots){
 			// x,y location for slot

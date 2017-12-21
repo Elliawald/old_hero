@@ -2,6 +2,8 @@
 mousex = device_mouse_x_to_gui(0);
 mousey = device_mouse_y_to_gui(0);
 
+
+
 var cell_xbuff = (cellSize+x_buffer)*scale;
 var cell_ybuff = (cellSize+y_buffer)*scale;
 
@@ -11,7 +13,20 @@ var i_mousey = mousey - actionbar_slots_y;
 var nx = i_mousex div cell_xbuff;
 var ny = i_mousey div cell_ybuff;
 
-if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height){
+if(mouse_wheel_up() || mouse_wheel_down() )
+{
+	if(mouse_wheel_up()) m_slotx--;
+	if(mouse_wheel_down()) m_slotx++;
+	if(m_slotx > inv_slots_width){
+		m_slotx = inv_slots_width;
+	}
+	if(m_slotx < 0 ){
+		m_slotx = 0;
+	}
+	selected_slot = min(actionbar_slots-1, m_slotx + (m_sloty*inv_slots_width));
+
+}
+if(nx >= 0 and nx < inv_slots_width and ny >= 0 and ny < inv_slots_height and selected_slot != -1){
 
 	var sx = i_mousex - (nx*cell_xbuff);
 	var sy = i_mousey - (ny*cell_ybuff);

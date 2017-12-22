@@ -7,17 +7,14 @@ if(drop_move){
 		drop_move = false;
 	}
 }else{
-	if(!keyboard_check(ord("O"))){
-		exit;
-	}
 	var px = obj_player.x;
 	var py = obj_player.y;
-	var r = 32;
+	var r = 24;
 	if(point_in_rectangle(px, py, x-r, y-r ,x+r, y+r)){
 		r = 2;
 		if(! point_in_rectangle(px,py, x-r, y-r,x+r,y+r)){
-			x = lerp(x,px, 0.1);
-			y = lerp(y,py, 0.1);
+			x = lerp(x,px, 0.3);
+			y = lerp(y,py, 0.3);
 		}else{
 			var in = item_num;
 			

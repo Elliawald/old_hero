@@ -82,6 +82,31 @@ if(place_meeting(obj_player.x,obj_player.y,obj_item) && obj_input.use_key_presse
 	instance_destroy(item);
 }
 
+
+if(place_meeting(x,y,obj_crop) && obj_input.use_key_pressed){
+		show_debug_message("PFLUECKEN");
+		//create item
+		var cropinst = instance_nearest(x,y,obj_crop);
+		var inst = instance_create_layer(cropinst.x,cropinst.y,"Instances", obj_item);
+		with(inst){
+			item_num = cropinst.cropType+1;
+			xframe = item_num mod (spr_width/cellSize);
+			yframe = item_num div (spr_width/cellSize);
+		}
+		with(cropsManager){
+			var cs = cellSize;
+			var gx = (cropinst.x div cs);
+			var gy = (cropinst.y div cs);
+
+			xx = gx * cs;
+			yy = gy * cs;
+			ds_crops_instances[# gx, gy] = 0;
+		}
+		instance_destroy(cropinst);	
+}
+
+
+
 //get direction
 dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis)
 

@@ -41,40 +41,4 @@ if(instance_exists(obj_crop) and keyboard_check_pressed(ord("G"))){
 	}
 }
 
-var px = obj_player.x;
-var py = obj_player.y;
-var cs = 32;
-var gx = mouse_x div cs;
-var gy = mouse_y div cs;
-var xx = gx*cs;
-var yy = gy*cs;
-
-
-
-if(!instance_exists(obj_crop)){
- exit;
-}
-var inst_crop = instance_nearest(xx,yy,obj_crop);
-
-var r = 32;
-var close_enough = false;
-if(point_in_rectangle(px, py, px-r, py-r ,px+r, py+r)){
-	close_enough = true;
-}
-
-with (inst_crop){
- if(mouse_check_button_pressed(mb_left) && inst_crop.fullyGrown && close_enough){
-		show_debug_message("PFLUECKEN");
-		//create item
-	
-		var inst = instance_create_layer(inst_crop.x,inst_crop.y,"Instances", obj_item);
-		with(inst){
-			item_num = 1;
-			xframe = item_num mod (inst_crop.sprite_width/32);
-			yframe = item_num div (inst_crop.sprite_width/32);
-		}
-	
-	}
-}
-
 
